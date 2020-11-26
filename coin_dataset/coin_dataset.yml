@@ -1,0 +1,13 @@
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: [
+  ../coin_dataset/images/set1_train/, 
+  ../coin_dataset/images/set2_train/, 
+  ../coin_dataset/images/set3_train/
+  ]
+val: ../coin_dataset/images/val/
+
+# number of classes
+nc: 5
+
+# class names
+names: ['5','1','10','2','.50']

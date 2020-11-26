@@ -1,0 +1,4 @@
+.DS_Store
+coin_dataset_raw/
+screenshot/
+yolov3/yolov3.weights
