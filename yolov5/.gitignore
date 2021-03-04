@@ -243,3 +243,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# My weights
+!/weights/coin_v1-9*
