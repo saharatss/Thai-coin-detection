@@ -23,8 +23,8 @@ weights = ['yolov5s.pt', 'yolov5m.pt', 'yolov5l.pt', 'yolov5x.pt']
 my_confidence 		= 0.80 # 0.25
 my_threshold  		= 0.45 # 0.45
 my_filterclasses 	= None
-# my_weight					= './weights/yolov5s.pt'
-my_weight					= './weights/coin_v1-7_last.pt'
+my_weight					= './weights/yolov5s.pt'
+# my_weight					= './weights/coin_v1-7_last.pt'
 
 set_logging()
 device = select_device('')
@@ -73,8 +73,9 @@ def main_process(input_img):
 			det[:, :4] = scale_coords(img.shape[2:], det[:, :4], img0.shape).round()
 			for *xyxy, conf, cls in reversed(det):
 				xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()
-				label = '%sbaht (%.0f%%)' % (names[int(cls)], conf*100)
-				total += int(names[int(cls)])
+				# label = '%sbaht (%.0f%%)' % (names[int(cls)], conf*100)
+				label = '%s (%.0f%%)' % (names[int(cls)], conf*100)
+				# total += int(names[int(cls)])
 				plot_one_box(xyxy, img0, label=label, color=colors[int(cls)], line_thickness=3)
 	print('Done. (%.3fs)' % (t2 - t1))
 	
